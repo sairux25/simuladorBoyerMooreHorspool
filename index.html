@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador Boyer-Moore-Horspool</title>
+
+  
+  <style>
+    body { font-family: sans-serif; max-width: 700px; margin: 20px auto; padding: 0 16px; }
+    label { display: block; margin-top: 12px; font-weight: bold; }
+    textarea, input { width: 100%; padding: 6px; box-sizing: border-box; font-family: monospace; }
+    button { margin-top: 12px; padding: 8px 16px; }
+    table { border-collapse: collapse; margin-top: 8px; }
+    th, td { border: 1px solid #888; padding: 6px 12px; text-align: center; font-family: monospace; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+
+  <h1>Boyer-Moore-Horspool</h1>
+
+  <!-- 1. Entrada de datos -->
+  <label for="texto">Texto</label>
+  <textarea id="texto" rows="4">ABRACADABRA</textarea>
+
+  <label for="patron">Patrón</label>
+  <input type="text" id="patron" value="ABRA">
+
+  <button id="btnBuscar">Buscar</button>
+
+  <p id="mensajeError" class="error"></p>
+
+  <!-- 2. Tabla de saltos -->
+  <h2>Tabla de saltos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Carácter</th>
+        <th>Salto</th>
+      </tr>
+    </thead>
+    <tbody id="cuerpoTabla"></tbody>
+  </table>
+
+  <!-- 3. Resultado -->
+  <h2>Resultado</h2>
+  <p id="cantidad"></p>
+  <p id="posiciones"></p>
+
+  <!-- Primero la lógica (modelo), después el controlador que la usa -->
+  <script src="modelo/BooyerMooreHorspool.js"></script>
+  <script src="controlador/app.js"></script>
+</body>
+</html>
